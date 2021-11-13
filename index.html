@@ -1,127 +1,556 @@
-<?php
-session_start();
-include("includes/con.php");
-if (isset($_SESSION['username']) && $_SESSION['userid'] = true) {
-    
-    echo "<script>
-    window.location = 'dashboard.php';
-</script>";
-
-} 
-
-
-?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+	
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/images/logos/ample-favicon.png">
-    <title>Virtual neighbourhood - Admin</title>
-    <!-- Custom CSS -->
-    <link href="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/dist/css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="">
+	<link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="">
+	
+	<!-- Meta description -->
+	<title>My Neighbourhood Online | Login</title>
+	<meta name="description" content="A luxury lifestyle blog and listing service. Discover the best of brands and businesses in your neighbourhood and indulge in extraordinary experiences with virtual tours like never before!">
+	<meta name="keywords" content="restaurant and cafes, home decor, night life, cafes, restaurant, clothing, jewellery, gym, 360 degree tours, virtual tours, virtual, tours, favourite, places, locations, login" />
+	
+	<!-- Favicon -->
+  <link href="" rel="icon" />
+  <link href="" rel="apple-touch-icon" />
+
+	<link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="">
+	<!-- Custom -->
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="">
+
+	<!-- Owl Stylesheets -->
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="">
+	
+	<!-- Cokkie css -->
+	<link rel="stylesheet" type="text/css" href=""> 
+	<script src="https://static.kuula.io/api.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162020340-3"></script>-->
+<!--<script>-->
+<!--  window.dataLayer = window.dataLayer || [];-->
+<!--  function gtag(){dataLayer.push(arguments);}-->
+<!--  gtag('js', new Date());-->
+
+<!--  gtag('config', 'UA-162020340-3');-->
+<!--</script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6TZ92SSPG0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6TZ92SSPG0');
+</script>
+
+
+
 </head>
 
 <body>
-<!-- ============================================================== -->
-<!-- Main wrapper -->
-<!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Header part -->
-        <!-- ============================================================== -->
-        <header class="py-3 bg-white">
-            <div class="container">
-                <!-- Start Header -->
-                <div class="header">
-                    <nav class="navbar navbar-expand-md navbar-light px-0">
-                        <a class="navbar-brand" href="#">
-                            <span style="color: #000; font-size: 24px; font-family: Algerian;"><b>Virtual Neighbourbood</b></span>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        
-                    </nav>
-                </div>
-                <!-- End Header -->
-            </div>
-        </header>
-        <!-- ============================================================== -->
-        <!-- Header part -->
-        <!-- ============================================================== -->
-        
-        <!-- ============================================================== -->
-        <!-- Page wrapper part -->
-        <!-- ============================================================== -->
-        <div class="content-wrapper">
-            <!-- ============================================================== -->
-            <!-- Demos part -->
-            <!-- ============================================================== -->
-            <section class="spacer bg-light">
-                <div class="container">
-                    <div class="row justify-content-md-center pt-5" style="margin-top: -80px;">
-                        <div class="col-md-9 text-center">
-                            <h2 class="text-dark"><u>LOGIN</u></h2>
-                        </div>
-                    </div>
-                    <div class="row py-5">
-                        <!-- ============================================================== -->
-                        <!-- Lite Demo -->
-                        <!-- ============================================================== -->
-                        <div class="col-md-12">
-                            <div class="card p-2 mr-1">
-                                <div class="card-body p-4">
-                                    <form class="form-horizontal" method="POST" action="includes/login.php">
-                                    <div class="live-box text-center mt-4">
-                                        <label>Username: <input type="text" name="uname" placeholder="Enter Username" class="form-control" style="width: 300px;"></label>
-                                        <br>
-                                        <label>Password: <input type="password" name="pass" placeholder="Enter Password" class="form-control" style="width: 300px;"></label>
-                                        <br>
-                                        <label>Mobile no: <input type="number" name="uname" placeholder="Enter Contact" class="form-control" style="width: 300px;"></label>
-                                        <br>
-                                    </div>
-                                    
-                                   
-                                    <div class="text-center mt-4 mb-3">
-                                        <button type="submit" name="submit" class="btn btn-custom btn-outline-info btn-lg" >LOGIN</button>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- Pro Demo -->
-                        <!-- ============================================================== -->
-                        
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End page wrapperHeader part -->
-        <!-- ============================================================== -->
-        <footer class="text-center p-4"> All Rights Reserved by Ample Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.</footer>
-    </div>
-</body>
-<!-- ============================================================== -->
-<!-- All Jquery -->
-<!-- ============================================================== -->
-<script src="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/plugins/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap tether Core JavaScript -->
-<script src="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/plugins/popper.js/dist/umd/popper.min.js"></script>
-<script src="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Wrapper -->
+	<section class="head" id="header">
+		<div class="wrapper bg-black">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<header class="header">
+							<div class="col-md-4 col-xs-3 col-sm-2">
+								<!-- Logo -->
+								<a href="#menu" class="nav-bars">
+									<img src="" class="img-responsive" alt="Collapsable Navbar">
+								</a>
+							</div>
+							<div class="col-md-4 col-xs-9 col-sm-7">
+							<a href="" class="logo">
+									<span class="symbol"><img src="https://www.myneighbourhoodonline.com/assets/img/discover-img/logo.png"
+											alt="Logo" /></span>
+								</a>
+							</div>
+							                            <div class="col-md-4 col-sm-3 text-right">
+								<!-- For web view only -->
+								<div class="login-signup hidden-xs visible-sm visible-md visible-lg">
+									<ul>
+									<li class="active">
+									    <a href="">Login&nbsp;|&nbsp;</a></li>
+									    
+										<li >
+											<a href="">Signup</a></li>
+									</ul>
+								</div>
+							</div>
+                            						</header>
+						<!-- Menu -->
+						<nav id="menu">
+							<ul>
+								<li class="visible-xs" >
+									<a href="">Login&nbsp;|&nbsp;Signup</a></li>
+								<!-- After user is logged in he/she will see this -->
+															<li >
+									<a href="">Blog</a></li>
+																 <!--       <li >-->
+									<!--<a href="javascript:void(0);"  onclick="redirect_after_login('favouriteplaces_all');">Favourite Places</a></li>-->
+									
+										<li><a href="javascript:void(0);" onclick="redirect_after_login('favouriteplaces_all');">Favourite Places</a></li>
+																<li >
+									<a href="">List Your Business</a></li>
+									
+								<li >
+									<a href="https://www.vrvenues.in/" target="_blank">Create Your Virtual Tour</a></li>
 
-</html>
+								<li >
+									<a href="">Contact Us</a></li>
+								<!-- Ends here -->
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+        
+        var baseurl = ''
+        
+        function signout()
+        {
+          var data = baseurl+"frontendapi/registration/signout";
+        
+          $.ajax({
+        
+            type : 'post',
+        
+            url : data,
+        
+            dataType: 'json',
+        
+            success: function(data) {
+              var data1 = JSON.stringify(data);
+              var response = JSON.parse(data1);
+        
+              var result = response.statuscode.trim();
+        
+              if(result == '400')
+              {
+                swal({
+                  /*title: 'Invalid Login',*/
+		          text: 'Session Expired Please Login Again!',
+                  confirmButtonColor: '#FF9494',
+                  type: 'warning'
+                });             
+              }else if(result == '200'){
+                swal({
+                  /*title: 'Successful!',*/
+		          text: "Logout Successfully!",
+                  animation: false,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+                  showConfirmButton: false,
+                  showCloseButton: false,
+                  timer: 4000,
+                  customClass: 'animated tada'
+                }).then(
+                  function () {},
+                  function (dismiss) {
+                    if (dismiss === 'timer') {
+                      window.location.href= baseurl;
+                    }
+                  }
+                )
+              }            
+            },
+            error: function() {}
+          });
+        }
+        
+        function redirect_after_login(url)
+		{
+		  $.ajax({
+	      url : baseurl+'frontend/redirect_after_login/'+url,
+	      beforeSend: function(){
+	        // $("#loader").removeClass("hidden");
+	      },
+	      success: function(res){
+	        // $("#loader").addClass("hidden"); 
+	        res = res.trim();
+	        console.log(res);
+	        try
+	        {
+	          var response = JSON.parse(res);
+	          if(response['n'] == 1)
+	          {
+	            window.location.href = baseurl+'frontend/login';
+	          }
+	          else
+	          {
+	            swal("Warning!", "Something went wrong.Please Try again later.", "warning");
+	          }
+	        }
+	        catch(e)
+	        {
+	          swal("Warning!", "Something went wrong.Please Try again later.", "warning");
+	        }
+	      }
+	    });
+
+		}
+	</script><meta name="google-signin-client_id" content="192135731294-ejpk33k800av3mgrv33l08ssda0943n8.apps.googleusercontent.com">
+
+<style>
+    .login-signup {
+        display: none;
+    }
+
+    .form-control {
+        margin-bottom: 20px;
+        border: 1px solid #111111;
+        font-family: 'futura-medium';
+        letter-spacing: 1px;
+        text-transform: initial;
+        font-size: 16px;
+    }
+
+    .fa {
+        margin-top: -5px;
+        font-size: 24px;
+        vertical-align: middle;
+        margin-right: 0;
+    }
+
+    ::placeholder {
+        color: #111 !important;
+        opacity: 1;
+        /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #111 !important;
+    }
+</style>
+
+<!-- Main -->
+<section class="main-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <div class="login-box">
+                    <div class="login-box-body">
+                        <h3 class="login-box-msg"><b>Login</b> </h3>
+                        <div class="row">
+                            <form action="" autocomplete="off" id="loginform">
+                                <div class="form-group">
+                                    <input type="hidden" value="" id="baseurl">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="email"
+                                            placeholder="Phone Number or Email ID" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="password" class="form-control" id="pass" placeholder="Password"
+                                            name="pass">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right mb-2">
+                                    <a href="" class="forgot-pass">Forgot Password?</a>
+                                </div>
+
+                                <div class="col-md-12 text-center mb-2">
+                                    <input type="submit" id="loginbtn" name="submit" value="Submit" class="btn btn-primary w-100 submit-btn" >
+                                </div>
+                                <div class="col-md-12 ">
+                                    <p class="new-user">New user? <a href=""> Signup</a></p>
+                                </div>
+
+                                <div class="col-md-10 col-md-offset-1">
+                                    <hr>
+                                    <span class="or-text">or</span>
+                                </div>
+
+                                <div class="col-md-12 text-center mb-2">
+                                 <a href="">
+                                    <button class="btn btn-primary fbbtn">
+                                      <i class="fa fa-facebook-official"></i> Facebook
+                                    </button>
+                                  </a>
+                                  <a href="">
+                                    <button class="btn btn-primary goo-btn glog">
+                                      <img src="https://img.icons8.com/fluent/48/000000/google-logo.png" /> Google
+                                    </button>
+                                  </a>
+                                </div> 
+                                <div id="gSignIn" style="display:none;">
+                                   <!--<button></button>-->
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="footer">
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12">
+						<p class="right-color">
+							My Neighbourhood Property Solutions &copy; 2021, All rights reserved. VR Venues is a registered trademark of My Neighbourhood Property Solutions.
+Terms, conditions, features, support, pricing and service options are subject to change without notice. Trademarks and service marks are the property of My Neighbourhood Property Solutions. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
+
+<!-- START Bootstrap-Cookie-Alert -->
+<div class="alert text-center cookiealert" role="alert" style="display: none !important;">
+	<b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website.</a>
+
+	<button type="button" class="btn btn-primary btn-sm acceptcookies">
+		I agree
+	</button>
+	<button type="button" class="btn btn-primary btn-sm declinecookie">
+		Decline
+	</button>
+</div>
+<!-- END Bootstrap-Cookie-Alert -->
+
+
+	<!-- Scripts -->
+
+	<script src=""></script>
+	<script src=""></script>
+	<script src=""></script>
+	<script src=""></script>
+    
+	<!-- Owl carousel -->
+	<script src=""></script>
+    <script src=""></script>
+    <!-- Include cookiealert script -->
+    <script src="https://cdn.jsdelivr.net/"></script>
+  <script src=""></script>
+  <script src=""></script>
+    <!-- Cokkie js -->
+<script src=""></script>
+    
+	<script>
+	   // Project Carousle
+		$(document).ready(function () {
+			$('.owl-carousel.project-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				responsiveClass: true,
+				dots: false,
+				navText: ["<i class='fa fa-angle-left icon-left-pos'></i>",
+					"<i class='fa fa-angle-right icon-right-pos'></i>"
+				],
+				responsive: {
+					0: {
+						items: 1,
+						nav: true
+					},
+					600: {
+						items: 3,
+						nav: true
+					},
+					1000: {
+						items: 3,
+						nav: true,
+						loop: false,
+						margin: 10
+					}
+				}
+			})
+		})
+		
+        //Icon carousel 		
+		$(document).ready(function () {
+		$('.owl-carousel.icon-carousel').owlCarousel({
+			loop: true,
+			margin: 0,
+			dots: false,
+			navText: ["<i class='fa fa-angle-left icon-caro-left'></i>",
+					"<i class='fa fa-angle-right icon-caro-right'></i>"
+				],
+			responsiveClass: true,
+			responsive: {
+				0: {
+					items: 2,
+					nav: true
+				},
+				600: {
+					items: 4,
+					nav: true
+				},
+				1000: {
+					items: 5,
+					nav: true,
+					loop: false,
+					margin: 20
+				},
+				1024: {
+				    items: 5,
+					nav: true
+				},
+				2560: {
+				    items: 5,
+					nav: true
+				}
+			}
+		})
+	})
+	</script>
+	<!-- Kuula api js -->
+    <!--script src="https://static.kuula.io/api.js"></script-->
+    <script>
+	$(".modal").on("show", function () {
+		$("body").addClass("modal-open");
+	}).on("hidden", function () {
+		$("body").removeClass("modal-open")
+	});
+</script>
+</body>
+
+</html>  
+<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+
+<script type="text/javascript">
+  $(document).on('click','.glog',function(e){
+    e.preventDefault();
+    // console.log('glob btn click');
+    renderButton();
+    $("#gSignIn").find('div').trigger('click');
+  }); 
+
+  function runSignDiv() 
+  {
+    console.log('***************');
+    console.log($("#gSignIn").find('div').trigger('click'));       
+  } 
+
+  function renderButton() 
+  {
+    gapi.signin2.render('gSignIn', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+  } 
+
+    function onSuccess(googleUser) 
+    {
+        // console.log(googleUser);
+    // Get the Google profile data (basic)
+    //var profile = googleUser.getBasicProfile();
+    //googleUser.disconnect();
+    // Retrieve the Google account data
+        gapi.client.load('oauth2', 'v2', function () {
+            var request = gapi.client.oauth2.userinfo.get({
+                'userId': 'me'
+            });
+            request.execute(function (resp) {  
+                // console.log(resp);  
+                var formdata = new FormData();
+                formdata.append("ID", resp.id);
+                formdata.append("email",resp.email );
+                formdata.append("name", resp.name);
+                formdata.append("given_name",resp.given_name);
+                formdata.append("family_name",resp.family_name);
+                formdata.append("social_type",'Google');
+                formdata.append("type", "login-google");
+                formdata.append("page_name", "login-action");
+                $.ajax({
+                    type: "POST",
+                    data: formdata,
+                    processData: false,
+                    contentType: false,
+                    url: baseurl+"frontend/social_login",
+                    beforeSend: function () {
+                        $("#change_pass").prop("disabled", true);
+                        $("#change_pass").text("Please Wait..");
+                    },
+                    success: function (res) {
+                        $("#change_pass").prop("disabled", false);
+                        res = res.trim(); 
+                        // console.log(res); 
+                        try
+                        {
+                            var response = JSON.parse(res);
+                            if (response['n'] == 1) 
+                            {
+                                // swal("Success!!!", response['msg'], "success").then(function(){
+                                //     location.href = baseurl;
+                                // });
+                                
+                                location.href = baseurl;
+                            }
+                            else
+                            {
+                                swal("Warning!", "Something Went Wrong. Please Try Again.", "warning");
+                                return false;
+                            }
+                            return false;
+                        }
+                        catch(e)
+                        {
+                            //console.log(e);
+                            swal("Warning!", "Something Went Wrong. Please Try Again.", "warning");
+                        }
+                        return false;
+                    }
+                }); 
+            });
+        });
+    }
+
+  // Sign-in failure callback
+  function onFailure(error) 
+  {
+    //alert(error);
+    conssole.log(error);
+  }
+
+  // Sign out the user
+  function signOut() 
+  {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+    });
+    gapi.signin2.render('gSignIn', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+   // auth2.disconnect();
+  }
+ 
+</script>
