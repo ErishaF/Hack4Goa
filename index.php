@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head> </head>
+<head> <h1>VIRTUAL NEIGHBORHOOD </h1></head>
 <body></body>
 </html>
 
