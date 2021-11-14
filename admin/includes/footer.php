@@ -1,0 +1,1 @@
+ <footer class="footer text-center"> 2021 &copy; Developed By - @Tech_ties </footer>
