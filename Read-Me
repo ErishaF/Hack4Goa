@@ -1,0 +1,7 @@
+========== READ ME ===============
+
+1. Set up Database SQL:
+
+Install the database schema by just uploading the SQL File (doubledocks.sql).
+
+2. change the con.php file inside "includes/con.php" and "admin/includes/con.php"
